@@ -65,6 +65,7 @@
   },
   "exclude": [
     "src/browser.ts",
-    "src/provider/browser.ts"
+    "src/provider/browser.ts",
+    "dist"
   ]
 }

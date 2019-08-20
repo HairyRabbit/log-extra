@@ -24,7 +24,7 @@ export function render(level: Level, name: string, datetime: Date, action: strin
     [
       `%c` + renderName(name) + `%c`,
       `%c ` + renderDatetime(datetime),
-      renderLevel(level) + ` %c`,
+      ` ` + renderLevel(level) + ` %c`,
       `%c` + renderAction(action) + `%c`
     ].join(''),
     [
@@ -60,7 +60,7 @@ function mapLevelToString(level: Level): string {
 
 function mapLevelToColor(level: Level): string {
   switch(level) {
-    case Level.Fatal: return `background-color:red;`
+    case Level.Fatal: return `background-color:red;color:white;`
     case Level.Error: return `color:red;`
     case Level.Warning: return `color:darkorange;`
     case Level.Info: return `color:darkblue;`

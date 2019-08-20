@@ -17,12 +17,11 @@ export function getDefaultLevel(env?: { [key: string]: string | undefined }): Le
 
   if(env.DEBUG) return Level.Debug
 
-  const e = env.NODE_ENV
-
-  if(`development` === e) return Level.Debug
-  else if(`production` === e) return Level.Error
-
-  return Level.Info
+  switch(env.NODE_ENV) {
+    case `production`: return Level.Error
+    case `development`: return Level.Debug
+    default: return Level.Info
+  }
 }
 
 export function parseLevel(level: string): Level | null {
